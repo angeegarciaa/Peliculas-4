@@ -1,4 +1,16 @@
-/* ===== CONFIGURACIÓN GENERAL ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --rosa: #e9a8c5;
+    --rosa-claro: #fce8f1;
+    --lavanda: #c8b8e8;
+    --violeta: #8b72b5;
+    --fondo: #fff8fc;
+    --blanco: #ffffff;
+    --texto: #594d60;
+    --borde: #f0dce9;
+}
 
 * {
     margin: 0;
@@ -7,197 +19,241 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0b0b14;
-    color: white;
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(135deg, #fff8fc, #f5efff);
+    color: var(--texto);
     min-height: 100vh;
 }
 
+/* TITULOS */
 
-/* ===== ENCABEZADO ===== */
-
-header {
-    background: #11111f;
-    padding: 25px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #292943;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #80649c;
 }
 
-header h1 {
-    font-size: 30px;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, #8b5cf6, #ec4899);
-    -webkit-background-clip: text;
-    color: transparent;
+h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 
-nav {
-    display: flex;
-    gap: 25px;
+h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
 }
 
-nav a {
-    color: #c7c7d9;
-    text-decoration: none;
-    transition: 0.3s;
+p {
+    line-height: 1.6;
 }
 
-nav a:hover {
-    color: #ffffff;
-}
+/* PANTALLAS DE INICIO, LOGIN Y REGISTRO */
 
-
-/* ===== CONTENIDO ===== */
-
-main {
+.pantalla-auth {
     width: 90%;
-    max-width: 1000px;
-    margin: 50px auto;
+    max-width: 430px;
+    margin: 75px auto;
+    padding: 40px 32px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(185, 139, 179, 0.15);
+    text-align: center;
 }
 
-
-/* ===== SECCIONES ===== */
-
-section {
-    background: #18182a;
-    padding: 35px;
-    margin-bottom: 35px;
-    border-radius: 20px;
-    border: 1px solid #30304d;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+.pantalla-auth h1 {
+    margin-bottom: 15px;
 }
 
-section h2 {
-    font-size: 25px;
-    margin-bottom: 30px;
+.pantalla-auth p {
+    margin: 12px 0;
+    color: #8c7d91;
 }
 
-
-/* ===== FORMULARIO ===== */
+/* FORMULARIOS */
 
 form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    text-align: left;
 }
 
 label {
-    color: #c9c9da;
+    font-weight: 600;
     font-size: 14px;
-    margin-bottom: 8px;
+    color: #806b8d;
 }
-
-
-/* ===== INPUTS ===== */
 
 input,
 select,
 textarea {
     width: 100%;
-    padding: 14px 16px;
-    background: #11111f;
-    color: white;
-    border: 1px solid #373752;
+    padding: 13px 15px;
+    border: 1px solid var(--borde);
     border-radius: 12px;
+    background: #fffafd;
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
     outline: none;
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: #707087;
+    transition: 0.2s;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: #8b5cf6;
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+    border-color: var(--rosa);
+    box-shadow: 0 0 0 3px rgba(233, 168, 197, 0.15);
 }
 
-
-/* ===== RESEÑA ===== */
-
 textarea {
-    grid-column: span 2;
-    min-height: 120px;
     resize: vertical;
 }
 
+/* BOTONES */
 
-/* ===== BOTÓN ===== */
-
-button {
-    grid-column: span 2;
-    padding: 15px;
+button,
+.boton {
+    display: inline-block;
+    padding: 13px 20px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(90deg, #7c3aed, #db2777);
+    background: linear-gradient(135deg, #e8a6c4, #bba6df);
     color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
-}
-
-
-/* ===== RECOMENDACIONES ===== */
-
-section:nth-child(2) {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
     text-align: center;
+    cursor: pointer;
+    transition: 0.25s;
 }
 
-section:nth-child(2) p {
-    color: #9292a8;
+button:hover,
+.boton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(185, 139, 179, 0.25);
+    filter: brightness(1.03);
 }
 
+.boton.secundario {
+    background: #eee6fa;
+    color: #80649c;
+}
 
-/* ===== FOOTER ===== */
+.pantalla-auth button {
+    margin-top: 8px;
+    width: 100%;
+}
+
+/* OPCIONES DE INICIO */
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 28px;
+}
+
+/* ENLACES */
+
+a {
+    color: #a17db8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #d18eaf;
+}
+
+/* ENCABEZADO DEL CATÁLOGO */
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid var(--borde);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+main section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 28px;
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(185, 139, 179, 0.09);
+}
+
+main section h2 {
+    margin-bottom: 22px;
+}
+
+/* FORMULARIO DEL CATÁLOGO */
+
+#form-serie {
+    max-width: 650px;
+}
+
+#form-serie button {
+    margin-top: 10px;
+}
+
+/* PIE DE PÁGINA */
 
 footer {
+    padding: 25px;
     text-align: center;
-    padding: 30px;
-    color: #77778c;
-    border-top: 1px solid #292943;
+    color: #a28fa8;
+    font-size: 13px;
 }
 
+/* ADAPTACIÓN A CELULARES */
 
-/* ===== CELULAR ===== */
+@media (max-width: 600px) {
+    .pantalla-auth {
+        margin: 35px auto;
+        padding: 30px 22px;
+    }
 
-@media (max-width: 700px) {
+    h1 {
+        font-size: 32px;
+    }
 
     header {
         flex-direction: column;
-        gap: 20px;
+        text-align: center;
     }
 
     nav {
-        gap: 15px;
+        justify-content: center;
     }
 
-    main {
-        width: 94%;
-        margin: 30px auto;
-    }
-
-    section {
-        padding: 25px 20px;
-    }
-
-    form {
-        grid-template-columns: 1fr;
-    }
-
-    textarea,
-    button {
-        grid-column: span 1;
+    main section {
+        padding: 22px;
     }
 }

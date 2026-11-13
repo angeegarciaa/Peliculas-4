@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Series App</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Series App</h1>
+        <nav>
+            <a href="catalogo.html">Catálogo</a>
+            <button id="cerrar-sesion" type="button">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Agregar una serie</h2>
+
+            <form id="form-serie">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" required>
+
+                <label for="genero">Género:</label>
+                <select id="genero" required>
+                    <option value="">Seleccionar género</option>
+                    <option value="accion">Acción</option>
+                    <option value="comedia">Comedia</option>
+                    <option value="drama">Drama</option>
+                    <option value="terror">Terror</option>
+                    <option value="romance">Romance</option>
+                    <option value="suspenso">Suspenso</option>
+                    <option value="ciencia-ficcion">Ciencia ficción</option>
+                </select>
+
+                <label for="plataforma">Plataforma:</label>
+                <select id="plataforma" required>
+                    <option value="">Seleccionar plataforma</option>
+                    <option value="netflix">Netflix</option>
+                    <option value="disney">Disney+</option>
+                    <option value="max">Max</option>
+                    <option value="prime">Prime Video</option>
+                    <option value="otras">Otra</option>
+                </select>
+
+                <label for="temporadas">Temporadas:</label>
+                <input type="number" id="temporadas" min="1" required>
+
+                <label for="puntuacion">Puntuación:</label>
+                <input type="number" id="puntuacion" min="1" max="10" required>
+
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" accept="image/*">
+
+                <label for="resena">Reseña:</label>
+                <textarea id="resena" rows="5" required></textarea>
+
+                <button type="submit">Agregar serie</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Recomendaciones</h2>
+            <div id="lista-series"></div>
+        </section>
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="auth.js"></script>
+<script src="series.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
